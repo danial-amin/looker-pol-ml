@@ -12,6 +12,6 @@ view: prediction {
 }
   dimension: predict_prob {
     type: number
-    sql: ${TABLE}.predicted_class_probs ;;
+    sql: ${TABLE}.max(predicted_class_probs) ;;
   }
 }
