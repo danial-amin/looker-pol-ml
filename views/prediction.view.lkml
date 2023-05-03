@@ -10,7 +10,6 @@ view: prediction {
         {% parameter quick_ratio %} AS current_assets_minus_inventory_over_short_term_liabilities,
         {% parameter cash_operating_cycle %} AS current_assets_minus_inventory_over_short_term_liabilities));;
 }
-
   dimension: predict_prob {
     type: number
     sql: ${TABLE}.predicted_class_probs ;;
