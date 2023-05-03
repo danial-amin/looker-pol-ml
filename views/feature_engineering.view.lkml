@@ -1,6 +1,6 @@
 view: feature_engineering {
   derived_table: {
-    sql: SELECT * FROM `polish-bankruptcy.pol.Feature_importance` ORDER BY `importance_weight` LIMIT 10
+    sql: SELECT * FROM `polish-bankruptcy.pol.Feature_importance` ORDER BY `importance_weight` DESC LIMIT 10
       ;;
   }
 
