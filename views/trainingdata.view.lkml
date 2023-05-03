@@ -22,6 +22,10 @@ view: trainingdata {
     sql: ${TABLE}.constant_capital_over_fixed_assets ;;
   }
 
+  measure: count_all {
+    type: number
+    sql:  SELECT COUNT(*) FROM ${TABLE};;
+  }
   dimension: constant_capital_over_total_assets {
     type: number
     sql: ${TABLE}.constant_capital_over_total_assets ;;
