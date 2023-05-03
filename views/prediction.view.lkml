@@ -5,7 +5,7 @@ view: prediction {
 
   derived_table: {
     sql:
-    SELECT * FROM ML.PREDICT(MODEL `polish-bankruptcy.pol.rfmodel`,
+    SELECT predicted_class_probs FROM ML.PREDICT(MODEL `polish-bankruptcy.pol.rfmodel`,
     (SELECT {% parameter ROA %} AS net_profit_over_total_assets,
         {% parameter quick_ratio %} AS current_assets_minus_inventory_over_short_term_liabilities,
         {% parameter cash_operating_cycle %} AS cash_plus_short_term_securities_plus_receivables_minus_short_term_liabilities_over_operating_expenses_minus_depreciation_times_365));;
@@ -15,9 +15,19 @@ view: prediction {
     sql: ${TABLE}.predicted_class_probs[1][1] ;;
   }
 
-  measure: other_prob {
+  dimension: other_prob {
     type: number
     sql: ${TABLE}.predicted_class_probs[0][1] ;;
+  }
+
+  dimension: class_NB {
+    type: number
+    sql: ${TABLE}.predicted_class_probs[0][0] ;;
+  }
+
+  dimension: class_B {
+    type: number
+    sql: sql: ${TABLE}.predicted_class_probs[1][0] ;;
   }
 
 }
