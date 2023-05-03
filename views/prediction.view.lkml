@@ -14,8 +14,10 @@ view: prediction {
     type: number
     sql: ${TABLE}.predicted_class_probs[1][1] ;;
   }
-  measure: other_prob{
+
+  measure: other_prob {
     type: number
-    sql: 1-${predict_prob} ;;
+    sql: ${TABLE}.predicted_class_probs[0][1] ;;
   }
+
 }
