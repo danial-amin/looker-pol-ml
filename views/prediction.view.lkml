@@ -7,7 +7,7 @@ view: prediction {
     sql:
     SELECT * FROM ML.PREDICT(MODEL `polish-bankruptcy.pol.rfmodel`,
     (SELECT {% parameter ROA %} AS net_profit_over_total_assets,
-        {% parameter quick_ratio %} AS forecasting_period,
+        {% parameter quick_ratio %} AS current_assets_minus_inventory_over_short_term_liabilities,
         {% parameter cash_operating_cycle %} AS current_assets_minus_inventory_over_short_term_liabilities));;
 }
 
