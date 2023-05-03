@@ -11,3 +11,4 @@ datagroup: polish_bankruptcy_default_datagroup {
 persist_with: polish_bankruptcy_default_datagroup
 
 explore: trainingdata {}
+explore: feature_engineering {}
