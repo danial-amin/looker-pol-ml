@@ -7,7 +7,7 @@ view: trainingdata {
     sql: ${TABLE}.book_value_of_equity_over_total_liabilities ;;
   }
 
-  dimension: cash_plus_short_term_securities_plus_receivables_minus_short_term_liabilities_over_operating_expenses_minus_depreciation_times_365 {
+  dimension: Cash_Operating_Cycle{
     type: number
     sql: ${TABLE}.cash_plus_short_term_securities_plus_receivables_minus_short_term_liabilities_over_operating_expenses_minus_depreciation_times_365 ;;
   }
@@ -46,7 +46,7 @@ view: trainingdata {
     sql: ${TABLE}.current_assets_minus_inventory_minus_short_term_liabilities_over_sales_minus_gross_profit_minus_depreciation ;;
   }
 
-  dimension: current_assets_minus_inventory_over_short_term_liabilities {
+  dimension: Quick_Ratio {
     type: number
     sql: ${TABLE}.current_assets_minus_inventory_over_short_term_liabilities ;;
   }
@@ -176,7 +176,7 @@ view: trainingdata {
     sql: ${TABLE}.net_profit_over_sales ;;
   }
 
-  dimension: net_profit_over_total_assets {
+  dimension: Return_On_Assets {
     type: number
     sql: ${TABLE}.net_profit_over_total_assets ;;
   }
@@ -306,7 +306,7 @@ view: trainingdata {
     sql: ${TABLE}.total_liabilities_over_profit_on_operating_activities_plus_depreciation_times_12_over_365 ;;
   }
 
-  dimension: total_liabilities_over_total_assets {
+  dimension: Debt_Ratio {
     type: number
     sql: ${TABLE}.total_liabilities_over_total_assets ;;
   }
